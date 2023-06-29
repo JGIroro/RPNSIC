@@ -670,17 +670,16 @@ def train(args,iter):
         hooks=hooks, checkpoint_dir=args.checkpoint_dir,
         save_checkpoint_secs=300, save_summaries_secs=180) as sess:
 
-        if iter <= 100:      
-            train_op = train_op_step0
-        elif iter <= 200:     
-            train_op = train_op_step1
-        elif iter <= 300:     
-            train_op = train_op_step2
-        else:
-            train_op = train_op_step0
-        iter = iter + 1
-
         while not sess.should_stop():
+            if iter <= 100:      
+                train_op = train_op_step0
+            elif iter <= 200:     
+                train_op = train_op_step1
+            elif iter <= 300:     
+                train_op = train_op_step2
+            else:
+                train_op = train_op_step0
+            iter = iter + 1
             sess.run(train_op)    
 
 if __name__ == "__main__":
