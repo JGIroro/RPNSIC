@@ -628,19 +628,19 @@ def train(args,iter):
         x_half_ph = np.zeros(shape=[args.batchsize, args.patchsize_h, args.patchsize_h, 3], dtype=np.float32)
         x_quater_ph = np.zeros(shape=[args.batchsize, args.patchsize_q, args.patchsize_q, 3], dtype=np.float32)
         
-
-        if iter <= 300:      
-            train_op = train_op_step0
-        elif iter <= 600:     
-            train_op = train_op_step1
-        elif iter <= 900:     
-            train_op = train_op_step2
-        else:
-            train_op = train_op_step0
-        iter = iter + 1
-
        
         while not sess.should_stop():
+            
+            if iter <= 300:      
+                train_op = train_op_step0
+            elif iter <= 600:     
+                train_op = train_op_step1
+            elif iter <= 900:     
+                train_op = train_op_step2
+            else:
+                train_op = train_op_step0
+            iter = iter + 1
+            
             real_org, real_half, real_quater = sess.run([img_org_batch, img_half_batch, img_quater_batch],
                                         feed_dict={inputx: x_org_ph, x_half: x_half_ph, x_quater: x_quater_ph})
             
