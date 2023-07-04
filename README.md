@@ -60,10 +60,6 @@ python eval_spaital.py
 python eval_quality.py
 ```
 
-## Contact
-If you find any problem in the code and want to ask any questions, please send us an email
-dyzhang@bjtu.edu.cn
-
 ## Citations
 If you think it is useful for your reseach, please cite our paper.
 ```
@@ -76,3 +72,7 @@ If you think it is useful for your reseach, please cite our paper.
       primaryClass={eess.IV}
 }
 ```
+
+## Contact
+If you find any problem in the code and want to ask any questions, please send us an email
+dyzhang@bjtu.edu.cn
