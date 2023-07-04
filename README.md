@@ -63,3 +63,16 @@ python eval_quality.py
 ## Contact
 If you find any problem in the code and want to ask any questions, please send us an email
 dyzhang@bjtu.edu.cn
+
+## Citations
+If you think it is useful for your reseach, please cite our paper.
+```
+@misc{zhang2023exploring,
+      title={Exploring Resolution Fields for Scalable Image Compression with Uncertainty Guidance}, 
+      author={Dongyi Zhang and Feng Li and Man Liu and Runmin Cong and Huihui Bai and Meng Wang and Yao Zhao},
+      year={2023},
+      eprint={2306.08941},
+      archivePrefix={arXiv},
+      primaryClass={eess.IV}
+}
+```
