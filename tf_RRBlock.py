@@ -21,7 +21,7 @@ class SMB((tf.keras.layers.Layer)):
         self.n_layers = n_layers
 
         self.tau = 1
-        self.relu = tf.keras.layers.ReLU()    # self.relu = nn.ReLU(True)  tf中找不到inplace平替
+        self.relu = tf.keras.layers.ReLU()  
 
         self.training = training
         super(SMB, self).__init__(*args, **kwargs)
@@ -29,7 +29,7 @@ class SMB((tf.keras.layers.Layer)):
     def build(self, input_shape):
         # channels mask
         self.ch_mask = tf.Variable(tf.random_uniform((1, self.n_layers, 2, self.out_channels)))
-        # self.ch_mask = nn.Parameter(torch.rand(1, out_channels, n_layers, 2))  Parameter也找不到平替
+        # self.ch_mask = nn.Parameter(torch.rand(1, out_channels, n_layers, 2))
         
         # body
         # body = []
@@ -310,7 +310,7 @@ class step0_SMB((tf.keras.layers.Layer)):
         self.n_layers = n_layers
 
         self.tau = 1
-        self.relu = tf.keras.layers.ReLU()    # self.relu = nn.ReLU(True)  tf中找不到inplace平替
+        self.relu = tf.keras.layers.ReLU()    # self.relu = nn.ReLU(True) 
 
         self.training = training
         super(step0_SMB, self).__init__(*args, **kwargs)
@@ -318,7 +318,7 @@ class step0_SMB((tf.keras.layers.Layer)):
     def build(self, input_shape):
         # channels mask
         self.ch_mask = tf.Variable(tf.random_uniform((1, self.n_layers, 2, self.out_channels)))
-        # self.ch_mask = nn.Parameter(torch.rand(1, out_channels, n_layers, 2))  Parameter也找不到平替
+        # self.ch_mask = nn.Parameter(torch.rand(1, out_channels, n_layers, 2))
         
         # body
         # body = []
